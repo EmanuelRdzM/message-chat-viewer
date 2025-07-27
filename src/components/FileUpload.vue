@@ -145,7 +145,7 @@ function parseChat(text) {
       }"
     >
       <v-card-title class="text-h5 text-center d-flex justify-space-between align-center">
-        <span style="background: linear-gradient(45deg, #2196F3, #00BCD4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600;">
+        <span style="background: linear-gradient(45deg, #2196F3, #00BCD4); background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600;">
           Message Chat Viewer
         </span>
         <v-btn 
