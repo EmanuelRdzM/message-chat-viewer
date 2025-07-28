@@ -64,9 +64,10 @@ function scrollToTop() {
   background: #ece5dd;
   padding: 12px;
   border-radius: 8px;
-  max-height: 70vh;
+  max-height: calc(100vh - 150px); /* para dejar espacio arriba y abajo */
   overflow-y: auto;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .date-separator {
