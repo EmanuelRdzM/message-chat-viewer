@@ -1,5 +1,7 @@
 # WhatsApp Chat Viewer
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/EmanuelRdzM/message-chat-viewer)
+
 **Visualizador de chat para exportaciones de WhatsApp**
 
 Este proyecto permite importar un archivo `.txt` exportado desde WhatsApp y visualizarlo en una interfaz similar una conversación de chat. Soporta la visualización de mensajes con formato de texto simple, manteniendo la estructura original de la conversación.
