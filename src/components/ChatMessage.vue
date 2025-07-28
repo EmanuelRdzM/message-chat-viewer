@@ -32,6 +32,7 @@ defineProps({
 .message-container {
   display: flex;
   margin: 4px 8px;
+  max-width: 100%;
 }
 
 .message-container.left {
@@ -43,12 +44,16 @@ defineProps({
 }
 
 .message-bubble {
-  max-width: 70%;
+  max-width: 55%; /* Limita el ancho máximo */
+  min-width: 100px; /* Establece un ancho mínimo para que el mensaje no se vea demasiado pequeño */
   padding: 8px 12px;
   border-radius: 8px;
   position: relative;
-  word-wrap: break-word;
+  word-wrap: break-word; /* Permite que el texto se divida para que no se desborde */
+  overflow-wrap: break-word; /* Para asegurar que los enlaces largos se dividan correctamente */
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  white-space: normal; /* Permite que el contenido haga saltos de línea */
+  word-break: break-word; /* Ayuda a romper palabras largas, como los enlaces */
 }
 
 .message-container.left .message-bubble {
@@ -89,4 +94,5 @@ defineProps({
   margin-left: 4px;
   display: inline-flex;
 }
+
 </style>

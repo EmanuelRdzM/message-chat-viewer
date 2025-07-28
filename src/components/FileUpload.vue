@@ -91,7 +91,14 @@ function parseChat(text) {
       return
     }
 
-    const [date, time] = dateTimePart.split(', ')
+    let date, time;
+    if (dateTimePart.includes(',')) {
+      // Si tiene coma, separamos por la coma
+      [date, time] = dateTimePart.split(', ');
+    } else {
+      // Si no tiene coma, asumimos que la fecha y hora están separadas por un espacio
+      [date, time] = dateTimePart.split(' ');
+    }
 
     if (firstUser === null) firstUser = userPart
     if (userPart !== firstUser && secondUser === null) secondUser = userPart
@@ -121,7 +128,8 @@ function parseChat(text) {
     return
   }
 
-  messages.value = parsed
+  messages.value = parsed;
+  
 }
 </script>
 
