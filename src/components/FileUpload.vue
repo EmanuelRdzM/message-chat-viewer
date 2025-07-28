@@ -42,25 +42,24 @@ function handleDrop(e) {
   }
 }
 
+const loading = ref(false)
+
 function handleFile(e) {
   const file = e.target.files[0]
   if (!file) return
-  
-  // Verificar extensión
-  if (!file.name.endsWith('.txt')) {
-    snackbarText.value = 'Por favor, sube un archivo .txt'
-    showSnackbar.value = true
-    return
-  }
+
+  loading.value = true // ⏳ activar loading
 
   const reader = new FileReader()
   reader.onload = (event) => {
     const text = event.target.result
     parseChat(text)
+    loading.value = false // ✅ desactivar loading
   }
   reader.onerror = () => {
     snackbarText.value = 'Error al leer el archivo'
     showSnackbar.value = true
+    loading.value = false
   }
   reader.readAsText(file, 'utf-8')
 }
@@ -232,6 +231,14 @@ function parseChat(text) {
       style="display: none"
       @change="handleFile"
     />
+
+    <v-overlay v-model="loading" persistent class="align-center justify-center">
+      <v-progress-circular
+        indeterminate
+        color="primary"
+        size="64"
+      ></v-progress-circular>
+    </v-overlay>
 
     <!-- Chat UI -->
     <transition name="slide-fade">
