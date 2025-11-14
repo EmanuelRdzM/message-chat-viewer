@@ -25,7 +25,7 @@ Este proyecto permite importar un archivo `.txt` exportado desde WhatsApp y visu
 
 ```bash
 git clone https://github.com/EmanuelRdzM/message-chat-viewer.git
-cd whatsapp-chat-viewer
+cd message-chat-viewer
 ```
 
 ### 2. Instalar dependencias.
